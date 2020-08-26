@@ -17,12 +17,13 @@ if bashio::config.has_value 'networkdisks'; then
     MOREDISKS=$(bashio::config 'networkdisks')
     CIFS_USERNAME=$(bashio::config 'cifsusername')
     CIFS_PASSWORD=$(bashio::config 'cifspassword')
+    CIFS_VERSION=$(bashio::config 'cifsversion')
     bashio::log.info "Network Disks mounting.. ${MOREDISKS}" && \
     for disk in $MOREDISKS 
     do
         bashio::log.info "Mount ${disk}"
         mkdir -p /$disk && \
-            mount -t cifs -o username=$CIFS_USERNAME,password=$CIFS_PASSWORD $disk /$disk && \
+            mount -t cifs -o username=$CIFS_USERNAME,password=$CIFS_PASSWORD,vers=$CIFS_VERSION $disk /$disk && \
             bashio::log.info "Success!"   
     done || \
     bashio::log.warning "Protection mode is ON. Unable to mount external drivers!"
