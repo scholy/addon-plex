@@ -17,7 +17,11 @@ if bashio::config.has_value 'networkdisks'; then
     MOREDISKS=$(bashio::config 'networkdisks')
     CIFS_USERNAME=$(bashio::config 'cifsusername')
     CIFS_PASSWORD=$(bashio::config 'cifspassword')
-    CIFS_VERSION=$(bashio::config 'cifsversion')
+    if bashio::config.has_value 'cifsversion'; then
+        CIFS_VERSION=$(bashio::config 'cifsversion')
+    else
+        CIFS_VERSION="3.0"
+    fi
     bashio::log.info "Network Disks mounting.. ${MOREDISKS}" && \
     for disk in $MOREDISKS 
     do
