@@ -48,7 +48,7 @@
         "networkdisks": ["<//SERVER/SHARE>"],
         "cifsusername": "<username>",
         "cifspassword": "<password>",
-        "cifsversion": "3.0"
+        "cifsversion": ""
     },
     "schema": {
         "log_level": "list(trace|debug|info|notice|warning|error|fatal)?",
