@@ -9,6 +9,6 @@ on:
 
 jobs:
   workflows:
-    uses: hassio-addons/workflows/.github/workflows/lock.yaml@main
+    uses: lbouriez/workflows/.github/workflows/lock.yaml@main
     secrets:
       GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
