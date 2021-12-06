@@ -41,7 +41,8 @@ hassio_api: true
 options:
   claim_code: ""
   webtools: false
-  networkdisks: "[<//SERVER/SHARE>]"
+  networkdisks:
+    "<//SERVER/SHARE>"
   cifsusername: "<username>"
   cifspassword: "<password>"
   cifsversion: 3.0
@@ -49,7 +50,8 @@ schema:
   log_level: list(trace|debug|info|notice|warning|error|fatal)?
   claim_code: str
   webtools: bool
-  networkdisks: [str]
+  networkdisks:
+    - str
   cifsusername: str
   cifspassword: str
   cifsversion: list(3.0|2.1|2.0|1.0)?
