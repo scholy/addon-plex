@@ -38,6 +38,7 @@ ports_description:
   33400/tcp: WebTools
   33443/tcp: WebTools
 hassio_api: true
+full_access: true
 options:
   claim_code: ""
   webtools: false
