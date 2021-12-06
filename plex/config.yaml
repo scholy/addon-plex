@@ -3,8 +3,9 @@ name: Plex Media Server
 version: dev
 slug: plex
 description: Recorded media, live TV, online news, and podcasts ready to stream.
-url: https://github.com/hassio-addons/addon-plex
+url: https://github.com/lbouriez/addon-plex
 webui: http://[HOST]:[PORT:32400]/web
+image: ghcr.io/lbouriez/addon-plex/{arch}
 startup: services
 arch:
   - aarch64
@@ -38,11 +39,14 @@ ports_description:
   33400/tcp: WebTools
   33443/tcp: WebTools
 hassio_api: true
+privileged:
+  - SYS_ADMIN
+  - DAC_READ_SEARCH
 full_access: true
 options:
   claim_code: ""
   webtools: false
-  networkdisks: "<//SERVER/SHARE>"
+  networkdisks: []
   cifsusername: "<username>"
   cifspassword: "<password>"
   cifsversion: 3.0
@@ -50,7 +54,8 @@ schema:
   log_level: list(trace|debug|info|notice|warning|error|fatal)?
   claim_code: str
   webtools: bool
-  networkdisks: str
+  networkdisks:
+    - str
   cifsusername: str
   cifspassword: str
   cifsversion: list(3.0|2.1|2.0|1.0)?
