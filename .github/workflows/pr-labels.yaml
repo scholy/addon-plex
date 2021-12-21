@@ -13,5 +13,3 @@ on:
 jobs:
   workflows:
     uses: lbouriez/workflows/.github/workflows/pr-labels.yaml@main
-    secrets:
-      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
