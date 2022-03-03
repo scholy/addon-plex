@@ -26,6 +26,7 @@ RUN \
     \
     && curl -J -L -o /tmp/plexmediaserver.tgz \
         "https://downloads.plex.tv/plex-media-server-new/${RELEASE}/synology/PlexMediaServer-${RELEASE}-${ARCH}_DSM6.spk" \
+        #"https://downloads.plex.tv/plex-media-server-new/1.25.7.5604-980a13e02/synology/PlexMediaServer-1.25.7.5604-980a13e02-x86_64_DSM6.spk"\
     \
     && mkdir /usr/lib/plexmediaserver \
     && tar -xOf /tmp/plexmediaserver.tgz package.tgz | tar -xzf - -C /usr/lib/plexmediaserver/ \
